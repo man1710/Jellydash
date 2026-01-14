@@ -1,0 +1,20 @@
+services:
+  jellydash:
+    build: .
+    container_name: jellydash
+    privileged: true
+    pid: host
+    network_mode: host
+    volumes:
+      - /sys:/sys:ro
+      - /proc:/proc:ro
+      - /data:/data:ro
+      - /dev:/dev
+      - /mnt:/mnt:ro
+      - {ADD_POOL_PATH}
+    environment:
+      JELLYFIN_URL: "${JELLYFIN_URL}"
+      JELLYFIN_API_KEY: "${JELLYFIN_API_KEY}"
+      POOL_PATH: "${POOL_PATH}"
+      NET_IFACE: "${NET_IFACE}"
+    restart: unless-stopped
