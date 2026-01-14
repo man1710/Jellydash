@@ -11,7 +11,7 @@ FastAPI + Docker dashboard for Jellyfin server stats, mergerfs pool, and locked 
 
 ## Install
 ```bash
-git clone <repo>
+git clone <https://github.com/man1710/Jellydash.git>
 cd jellydash
 cp .env.example .env
 # edit .env with your values
